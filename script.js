@@ -699,6 +699,9 @@ function beefGauge() {
 var roseChart = echarts.init(document.getElementById('roseChart'));
 
 var roseOption = {
+	tooltip: {
+		trigger: 'item'
+	},
 	color: [
 	"#d13232",
 	"#d43f3f",
@@ -722,15 +725,12 @@ var roseOption = {
   toolbox: {
     show: true,
     feature: {
-      mark: { show: true },
-      dataView: { show: true, readOnly: false },
-      restore: { show: true },
       saveAsImage: { show: true }
     }
   },
   series: [
     {
-      name: 'Nightingale Chart',
+      name: 'Average Yield of Cuts(%)',
       type: 'pie',
       radius: '55%',
       center: ['50%', '50%'],
